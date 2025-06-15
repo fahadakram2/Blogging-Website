@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    image: fahad813/myapp-backend
+    ports:
+      - "5000:5000"
+    restart: always
+
+  frontend:
+    image: fahad813/myapp-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
